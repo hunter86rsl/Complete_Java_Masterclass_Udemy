@@ -25,6 +25,7 @@ public class Main {
         result = result % 3;
         System.out.println(previousResult + " % 3 = " + result);
 
+        previousResult = result;
         result = result + 1;
         System.out.println("Result is now " + result);
         result++;
@@ -51,10 +52,9 @@ public class Main {
             System.out.println("You got the high score!");
 
         int secondTopScore = 81;
-        if (topScore > secondTopScore && topScore < 100)
+        if ((topScore > secondTopScore) && (topScore < 100))
             System.out.println("Greater than second top score and less then 100");
 
-        //=================================================
         if((topScore >90) || (secondTopScore <=90))
             System.out.println("One of these tests is true");
 
@@ -85,6 +85,23 @@ public class Main {
         System.out.println("Remainder is " + theRemainder);
         if(theRemainder <=20)
             System.out.println("Total was over the limit");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
