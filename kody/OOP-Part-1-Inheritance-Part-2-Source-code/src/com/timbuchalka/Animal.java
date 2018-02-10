@@ -1,5 +1,8 @@
 package com.timbuchalka;
 
+/**
+ * Created by dev on 6/07/15.
+ */
 public class Animal {
 
     private String name;
@@ -18,11 +21,15 @@ public class Animal {
 
     public void eat() {
         System.out.println("Animal.eat() called");
+
     }
 
     public void move(int speed) {
         System.out.println("Animal.move() called.  Animal is moving at " +speed);
+
     }
+
+
 
     public String getName() {
         return name;
