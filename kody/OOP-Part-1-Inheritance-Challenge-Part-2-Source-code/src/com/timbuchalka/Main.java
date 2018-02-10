@@ -1,6 +1,6 @@
 package com.timbuchalka;
 
-public class Main extends Object{
+public class Main {
 
     public static void main(String[] args) {
 
@@ -17,5 +17,6 @@ public class Main extends Object{
         outlander.accelerate(30);
         outlander.accelerate(20);
         outlander.accelerate(-42);
+
     }
 }

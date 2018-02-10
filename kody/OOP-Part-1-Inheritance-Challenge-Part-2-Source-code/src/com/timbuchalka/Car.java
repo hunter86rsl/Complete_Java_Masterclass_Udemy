@@ -1,5 +1,8 @@
 package com.timbuchalka;
 
+/**
+ * Created by dev on 6/07/15.
+ */
 public class Car extends Vehicle {
 
     private int wheels;
@@ -20,7 +23,7 @@ public class Car extends Vehicle {
 
     public void changeGear(int currentGear) {
         this.currentGear = currentGear;
-        System.out.println("Car.setCurrentGear(): Change to " + this.currentGear + " gear.");
+        System.out.println("Car.setCurrentGear(): Changed to " + this.currentGear + " gear.");
     }
 
     public void changeVelocity(int speed, int direction) {

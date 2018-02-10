@@ -1,5 +1,8 @@
 package com.timbuchalka;
 
+/**
+ * Created by dev on 6/07/15.
+ */
 public class Outlander extends Car {
     private int roadServiceMonths;
 
@@ -27,5 +30,8 @@ public class Outlander extends Car {
         if(newVelocity > 0) {
             changeVelocity(newVelocity, getCurrentDirection());
         }
+
+
     }
+
 }
