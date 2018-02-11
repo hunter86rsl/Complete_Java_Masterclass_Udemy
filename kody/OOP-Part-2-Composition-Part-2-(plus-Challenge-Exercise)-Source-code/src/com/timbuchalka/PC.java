@@ -1,5 +1,8 @@
 package com.timbuchalka;
 
+/**
+ * Created by dev on 16/07/15.
+ */
 public class PC {
     private Case theCase;
     private Monitor monitor;
@@ -17,7 +20,7 @@ public class PC {
     }
 
     private void drawLogo() {
-        //Fancy graphics
+        // Fancy graphics
         monitor.drawPixelAt(1200, 50, "yellow");
     }
 }

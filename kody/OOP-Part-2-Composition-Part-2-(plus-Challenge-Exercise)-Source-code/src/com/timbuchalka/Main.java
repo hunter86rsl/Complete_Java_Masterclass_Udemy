@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         Dimensions dimensions = new Dimensions(20, 20, 5);
-        Case theCase = new Case("2208", "Dell", "240", dimensions);
+	    Case theCase = new Case("220B", "Dell", "240", dimensions);
 
         Monitor theMonitor = new Monitor("27inch Beast", "Acer", 27, new Resolution(2540, 1440));
 
@@ -12,6 +12,7 @@ public class Main {
 
         PC thePC = new PC(theCase, theMonitor, theMotherboard);
         thePC.powerUp();
+
 
         // Create a single room of a house using composition.
         // Think about the things that should be included in the room.
@@ -35,5 +36,10 @@ public class Main {
 
         Bedroom bedRoom = new Bedroom("Tims", wall1, wall2, wall3, wall4, ceiling,bed, lamp);
         bedRoom.makeBed();
+
+        bedRoom.getLamp().turnOn();
+
+
+
     }
 }
