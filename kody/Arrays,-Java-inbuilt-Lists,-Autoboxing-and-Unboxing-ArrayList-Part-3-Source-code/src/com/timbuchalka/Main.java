@@ -11,6 +11,7 @@ public class Main {
     public static void main(String[] args) {
         boolean quit = false;
         int choice = 0;
+
         printInstructions();
         while (!quit) {
             System.out.println("Enter your choice: ");
@@ -38,7 +39,6 @@ public class Main {
                     break;
                 case 6:
                     processArrayList();
-                    break;
                 case 7:
                     quit = true;
                     break;
@@ -64,27 +64,25 @@ public class Main {
 
     public static void modifyItem() {
         System.out.print("Current item name: ");
-        String itemName = scanner.nextLine();
+        String itemNo = scanner.nextLine();
         System.out.print("Enter new item: ");
         String newItem = scanner.nextLine();
-        groceryList.modifyGroceryItem(itemName, newItem);
+        groceryList.modifyGroceryItem(itemNo, newItem);
     }
 
     public static void removeItem() {
         System.out.print("Enter item name: ");
-        String itemName = scanner.nextLine();
-        scanner.nextLine();
-        groceryList.removeGroceryItem(itemName);
-
+        String itemNo = scanner.nextLine();
+        groceryList.removeGroceryItem(itemNo);
     }
 
     public static void searchForItem() {
         System.out.print("Item to search for: ");
         String searchItem = scanner.nextLine();
-        if (groceryList.onFile(searchItem)) {
-            System.out.println("Found " + searchItem + " in our grocery list");
+        if(groceryList.onFile(searchItem)) {
+            System.out.println("Found " + searchItem);
         } else {
-            System.out.println(searchItem + " is not in the shopping list");
+            System.out.println(searchItem + ", not on file.");
         }
     }
 
@@ -96,5 +94,31 @@ public class Main {
 
         String[] myArray = new String[groceryList.getGroceryList().size()];
         myArray = groceryList.getGroceryList().toArray(myArray);
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
