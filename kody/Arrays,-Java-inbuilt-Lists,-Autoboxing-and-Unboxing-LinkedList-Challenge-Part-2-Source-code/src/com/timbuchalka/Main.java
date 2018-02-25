@@ -10,7 +10,7 @@ public class Main {
     private static ArrayList<Album> albums = new ArrayList<Album>();
 
     public static void main(String[] args) {
-        // Create a program that implements a playlist for songs
+	    // Create a program that implements a playlist for songs
         // Create a Song class having Title and Duration for a song.
         // The program will have an Album class containing a list of songs.
         // The albums will be stored in an ArrayList
@@ -61,6 +61,10 @@ public class Main {
         albums.get(1).addToPlayList(24, playList);  // There is no track 24
 
         play(playList);
+
+
+
+
     }
 
     private static void play(LinkedList<Song> playList) {
@@ -68,7 +72,6 @@ public class Main {
         boolean quit = false;
         boolean forward = true;
         ListIterator<Song> listIterator = playList.listIterator();
-
         if(playList.size() == 0) {
             System.out.println("No songs in playlist");
             return;
@@ -125,6 +128,26 @@ public class Main {
 
             }
         }
-
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
