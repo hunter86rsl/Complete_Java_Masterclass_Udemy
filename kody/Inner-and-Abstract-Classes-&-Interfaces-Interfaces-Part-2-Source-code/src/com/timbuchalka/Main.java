@@ -7,26 +7,7 @@ public class Main {
     private static List<Album> albums = new ArrayList<Album>();
 
     public static void main(String[] args) {
-
-        phoneMain();
-        songMain();
-    }
-
-    private static void phoneMain() {
-        ITelephone timsPhone;
-        timsPhone = new DeskPhone(123456);
-        timsPhone.powerOn();
-        timsPhone.callPhone(123456);
-        timsPhone.answer();
-
-        timsPhone = new MobilePhone(24565);
-        timsPhone.powerOn();
-        timsPhone.callPhone(24565);
-        timsPhone.answer();
-    }
-
-    private static void songMain() {
-        // Create a program that implements a playlist for songs
+	    // Create a program that implements a playlist for songs
         // Create a Song class having Title and Duration for a song.
         // The program will have an Album class containing a list of songs.
         // The albums will be stored in an ArrayList
@@ -77,6 +58,10 @@ public class Main {
         albums.get(1).addToPlayList(24, playList);  // There is no track 24
 
         play(playList);
+
+
+
+
     }
 
     private static void play(List<Song> playList) {
@@ -190,4 +175,25 @@ public class Main {
         }
         System.out.println("================================");
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
