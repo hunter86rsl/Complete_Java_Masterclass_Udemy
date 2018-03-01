@@ -1,6 +1,10 @@
 package com.timbuchalka;
 
-public abstract class Bird extends Animal implements CanFly{
+/**
+ * Created by dev on 7/10/2015.
+ */
+public abstract class Bird extends Animal implements CanFly
+{
     public Bird(String name) {
         super(name);
     }
@@ -13,10 +17,11 @@ public abstract class Bird extends Animal implements CanFly{
     @Override
     public void breathe() {
         System.out.println("Breathe in, breathe out, repeat");
+
     }
 
     @Override
     public void fly() {
-        System.out.println(getName() + "is flapping its wings");
+        System.out.println(getName() + " is flapping its wings");
     }
 }

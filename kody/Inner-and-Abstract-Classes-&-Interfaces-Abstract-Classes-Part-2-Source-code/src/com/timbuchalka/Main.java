@@ -3,7 +3,7 @@ package com.timbuchalka;
 public class Main {
 
     public static void main(String[] args) {
-        Dog dog = new Dog("Yorkie");
+	    Dog dog = new Dog("Yorkie");
         dog.breathe();
         dog.eat();
 
@@ -73,6 +73,5 @@ public class Main {
         for (String s : data) {
             // create new item with value set to the string s
 
-        }
     }
 }
