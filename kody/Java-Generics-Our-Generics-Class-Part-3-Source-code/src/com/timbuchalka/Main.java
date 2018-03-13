@@ -6,7 +6,7 @@ import java.util.Collections;
 public class Main {
 
     public static void main(String[] args) {
-        FootballPlayer joe = new FootballPlayer("Joe");
+	    FootballPlayer joe = new FootballPlayer("Joe");
         BaseballPlayer pat = new BaseballPlayer("Pat");
         SoccerPlayer beckham = new SoccerPlayer("Beckham");
 
@@ -27,8 +27,8 @@ public class Main {
         FootballPlayer banks = new FootballPlayer("Gordon");
         melbourne.addPlayer(banks);
 
-        Team<FootballPlayer> hawthorn = new Team<>("Hawthorn");
-        Team<FootballPlayer> fremantle = new Team<>("Fremantle");
+        Team<FootballPlayer> hawthorn= new Team<>("Hawthorn");
+        Team<FootballPlayer> fremantle= new Team<>("Fremantle");
 
         hawthorn.matchResult(fremantle, 1, 0);
         hawthorn.matchResult(adelaideCrows, 3, 8);
@@ -48,6 +48,6 @@ public class Main {
         System.out.println(melbourne.compareTo(fremantle));
 
         ArrayList<Team> teams;
-//        Collections.sort(teams);
+        Collections.sort(teams);
     }
 }
