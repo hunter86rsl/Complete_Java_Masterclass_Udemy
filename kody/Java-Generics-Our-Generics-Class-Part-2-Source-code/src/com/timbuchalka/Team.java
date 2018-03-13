@@ -2,12 +2,16 @@ package com.timbuchalka;
 
 import java.util.ArrayList;
 
+/**
+ * Created by dev on 17/10/2015.
+ */
 public class Team<T extends Player> {
     private String name;
     int played = 0;
     int won = 0;
     int lost = 0;
     int tied = 0;
+
 
     private ArrayList<T> members = new ArrayList<>();
 
@@ -38,18 +42,19 @@ public class Team<T extends Player> {
 
         String message;
 
-        if (ourScore > theirScore) {
+        if(ourScore > theirScore) {
             won++;
             message = " beat ";
-        } else if (ourScore == theirScore) {
+        } else if(ourScore == theirScore) {
             tied++;
             message = " drew with ";
+
         } else {
             lost++;
             message = " lost to ";
         }
         played++;
-        if (opponent != null) {
+        if(opponent != null) {
             System.out.println(this.getName() + message + opponent.getName());
             opponent.matchResult(null, theirScore, ourScore);
         }
@@ -60,3 +65,26 @@ public class Team<T extends Player> {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

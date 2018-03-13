@@ -3,7 +3,7 @@ package com.timbuchalka;
 public class Main {
 
     public static void main(String[] args) {
-        FootballPlayer joe = new FootballPlayer("Joe");
+	    FootballPlayer joe = new FootballPlayer("Joe");
         BaseballPlayer pat = new BaseballPlayer("Pat");
         SoccerPlayer beckham = new SoccerPlayer("Beckham");
 
@@ -31,6 +31,6 @@ public class Main {
         hawthorn.matchResult(adelaideCrows, 3, 8);
 
         adelaideCrows.matchResult(fremantle, 2, 1);
-//        adelaideCrows.matchResult(baseballTeam, 1, 1);
+        adelaideCrows.matchResult(baseballTeam, 1, 1);
     }
 }
