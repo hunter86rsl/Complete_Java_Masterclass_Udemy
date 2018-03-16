@@ -1,5 +1,8 @@
 package com.timbuchalka;
 
+/**
+ * Created by dev on 20/11/2015.
+ */
 public class Password {
     private static final int key = 748576362;
     private final int encryptedPassword;
@@ -17,7 +20,7 @@ public class Password {
     }
 
     public boolean letMeIn(int password) {
-        if (encryptDecrypt(password) == this.encryptedPassword) {
+        if(encryptDecrypt(password) == this.encryptedPassword) {
             System.out.println("Welcome");
             return true;
         } else {
