@@ -8,7 +8,7 @@ public class Main {
     private static Map<Integer, Location> locations = new HashMap<Integer, Location>();
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+	    Scanner scanner = new Scanner(System.in);
 
         locations.put(0, new Location(0, "You are sitting in front of a computer learning Java"));
         locations.put(1, new Location(1, "You are standing at the end of a road before a small brick building"));
@@ -38,26 +38,39 @@ public class Main {
 //        locations.get(5).addExit("Q", 0);
 
         int loc = 1;
-        while(true) {
-            System.out.println(locations.get(loc).getDescription());
-            if(loc == 0) {
-                break;
-            }
+//        while(true) {
+//            System.out.println(locations.get(loc).getDescription());
+//            if(loc == 0) {
+//                break;
+//            }
+//
+//            Map<String, Integer> exits = locations.get(loc).getExits();
+//            System.out.print("Available exits are ");
+//            for(String exit: exits.keySet()) {
+//                System.out.print(exit + ", ");
+//            }
+//            System.out.println();
+//
+//            String direction = scanner.nextLine().toUpperCase();
+//
+//            if(exits.containsKey(direction)) {
+//                loc = exits.get(direction);
+//
+//            } else {
+//                System.out.println("You cannot go in that direction");
+//            }
+//        }
 
-            Map<String, Integer> exits = locations.get(loc).getExits();
-            System.out.print("Available exits are ");
-            for(String exit: exits.keySet()) {
-                System.out.print(exit + ", ");
-            }
-            System.out.println();
+        String[] road = "You are standing at the end of a road before a small brick building".split(" ");
+        for (String i : road) {
+            System.out.println(i);
+        }
 
-            String direction = scanner.nextLine().toUpperCase();
+        System.out.println("==================================");
 
-            if(exits.containsKey(direction)) {
-                loc = exits.get(direction);
-            } else {
-                System.out.println("You cannot go in that direction");
-            }
+        String[] building = "You are inside a building, a well house for a small spring".split(", ");
+        for (String i : building) {
+            System.out.println(i);
         }
     }
 }
