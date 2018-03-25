@@ -3,6 +3,9 @@ package com.timbuchalka;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by dev on 12/01/2016.
+ */
 public final class HeavenlyBody {
     private final String name;
     private final double orbitalPeriod;
@@ -30,9 +33,10 @@ public final class HeavenlyBody {
         return new HashSet<>(this.satellites);
     }
 
+
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if(this == obj) {
             return true;
         }
 
