@@ -24,7 +24,7 @@ public class Main {
 
         HeavenlyBody tempMoon = new HeavenlyBody("Moon", 27);
         solarSystem.put(tempMoon.getName(), tempMoon);
-        temp.addSattelite(tempMoon);
+        temp.addSatellite(tempMoon);
 
         temp = new HeavenlyBody("Mars", 687);
         solarSystem.put(temp.getName(), temp);
@@ -32,11 +32,11 @@ public class Main {
 
         tempMoon = new HeavenlyBody("Deimos", 1.3);
         solarSystem.put(tempMoon.getName(), tempMoon);
-        temp.addSattelite(tempMoon); // temp is still Mars
+        temp.addSatellite(tempMoon); // temp is still Mars
 
         tempMoon = new HeavenlyBody("Phobos", 0.3);
         solarSystem.put(tempMoon.getName(), tempMoon);
-        temp.addSattelite(tempMoon); // temp is still Mars
+        temp.addSatellite(tempMoon); // temp is still Mars
 
         temp = new HeavenlyBody("Jupiter", 4332);
         solarSystem.put(temp.getName(), temp);
@@ -44,19 +44,19 @@ public class Main {
 
         tempMoon = new HeavenlyBody("Io", 1.8);
         solarSystem.put(tempMoon.getName(), tempMoon);
-        temp.addSattelite(tempMoon); // temp is still Jupiter
+        temp.addSatellite(tempMoon); // temp is still Jupiter
 
         tempMoon = new HeavenlyBody("Europa", 3.5);
         solarSystem.put(tempMoon.getName(), tempMoon);
-        temp.addSattelite(tempMoon); // temp is still Jupiter
+        temp.addSatellite(tempMoon); // temp is still Jupiter
 
         tempMoon = new HeavenlyBody("Ganymede", 7.1);
         solarSystem.put(tempMoon.getName(), tempMoon);
-        temp.addSattelite(tempMoon); // temp is still Jupiter
+        temp.addSatellite(tempMoon); // temp is still Jupiter
 
         tempMoon = new HeavenlyBody("Callisto", 16.7);
         solarSystem.put(tempMoon.getName(), tempMoon);
-        temp.addSattelite(tempMoon); // temp is still Jupiter
+        temp.addSatellite(tempMoon); // temp is still Jupiter
 
         temp = new HeavenlyBody("Saturn", 10759);
         solarSystem.put(temp.getName(), temp);
@@ -75,32 +75,38 @@ public class Main {
         planets.add(temp);
 
         System.out.println("Planets");
-        for (HeavenlyBody planet : planets) {
+        for(HeavenlyBody planet : planets) {
             System.out.println("\t" + planet.getName());
         }
 
-        HeavenlyBody body = solarSystem.get("Jupiter");
+        HeavenlyBody body = solarSystem.get("Mars");
         System.out.println("Moons of " + body.getName());
-        for (HeavenlyBody jupiterMoon : body.getSatellites()) {
+        for(HeavenlyBody jupiterMoon: body.getSatellites()) {
             System.out.println("\t" + jupiterMoon.getName());
         }
 
         Set<HeavenlyBody> moons = new HashSet<>();
-        for (HeavenlyBody planet : planets) {
+        for(HeavenlyBody planet : planets) {
             moons.addAll(planet.getSatellites());
         }
 
         System.out.println("All Moons");
-        for (HeavenlyBody moon : moons) {
+        for(HeavenlyBody moon : moons) {
             System.out.println("\t" + moon.getName());
         }
 
         HeavenlyBody pluto = new HeavenlyBody("Pluto", 842);
         planets.add(pluto);
 
-        for (HeavenlyBody planet : planets) {
+        for(HeavenlyBody planet : planets) {
             System.out.println(planet.getName() + ": " + planet.getOrbitalPeriod());
         }
+
+        Object o = new Object();
+        o.equals(o);
+        "pluto".equals("");
+
+
 
     }
 }
