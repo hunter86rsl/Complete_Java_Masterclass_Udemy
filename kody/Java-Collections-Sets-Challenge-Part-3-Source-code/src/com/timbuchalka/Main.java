@@ -75,30 +75,30 @@ public class Main {
         planets.add(temp);
 
         System.out.println("Planets");
-        for (HeavenlyBody planet : planets) {
+        for(HeavenlyBody planet : planets) {
             System.out.println("\t" + planet.getKey());
         }
 
         HeavenlyBody body = solarSystem.get(HeavenlyBody.makeKey("Mars", HeavenlyBody.BodyTypes.PLANET));
         System.out.println("Moons of " + body.getKey());
-        for (HeavenlyBody jupiterMoon : body.getSatellites()) {
+        for(HeavenlyBody jupiterMoon: body.getSatellites()) {
             System.out.println("\t" + jupiterMoon.getKey());
         }
 
         Set<HeavenlyBody> moons = new HashSet<>();
-        for (HeavenlyBody planet : planets) {
+        for(HeavenlyBody planet : planets) {
             moons.addAll(planet.getSatellites());
         }
 
         System.out.println("All Moons");
-        for (HeavenlyBody moon : moons) {
+        for(HeavenlyBody moon : moons) {
             System.out.println("\t" + moon.getKey());
         }
 
         HeavenlyBody pluto = new DwarfPlanet("Pluto", 842);
         planets.add(pluto);
 
-        for (HeavenlyBody planet : planets) {
+        for(HeavenlyBody planet : planets) {
             System.out.println(planet);
 //            System.out.println(planet.getKey() + ": " + planet.getOrbitalPeriod());
         }
@@ -116,7 +116,7 @@ public class Main {
 
         System.out.println();
         System.out.println("The solar system contains:");
-        for (HeavenlyBody heavenlyBody : solarSystem.values()) {
+        for(HeavenlyBody heavenlyBody : solarSystem.values()) {
             System.out.println(heavenlyBody);
         }
 

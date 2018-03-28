@@ -3,6 +3,9 @@ package com.timbuchalka;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by dev on 12/01/2016.
+ */
 public abstract class HeavenlyBody {
     private final Key key;
     private final double orbitalPeriod;
@@ -18,9 +21,14 @@ public abstract class HeavenlyBody {
     }
 
     public HeavenlyBody(String name, double orbitalPeriod, BodyTypes bodyType) {
+
         this.key = new Key(name, bodyType);
         this.orbitalPeriod = orbitalPeriod;
         this.satellites = new HashSet<>();
+    }
+
+    public double getOrbitalPeriod() {
+        return orbitalPeriod;
     }
 
     public Key getKey() {
@@ -35,13 +43,14 @@ public abstract class HeavenlyBody {
         return new HashSet<>(this.satellites);
     }
 
+
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public final boolean equals(Object obj) {
+        if(this == obj) {
             return true;
         }
 
-        if (obj instanceof HeavenlyBody) {
+        if(obj instanceof HeavenlyBody) {
             HeavenlyBody theObject = (HeavenlyBody) obj;
             return this.key.equals(theObject.getKey());
         }
@@ -58,7 +67,7 @@ public abstract class HeavenlyBody {
     }
 
     @Override
-    public final String toString() {
+    public String toString() {
         return this.key.name + ": " + this.key.bodyType + ", " + this.orbitalPeriod;
     }
 
@@ -87,8 +96,8 @@ public abstract class HeavenlyBody {
         @Override
         public boolean equals(Object obj) {
             Key key = (Key) obj;
-            if (this.name.equals(key.getName())) {
-                return (this.bodyType == key.getBodyType());
+            if(this.name.equals(key.getName())) {
+                return(this.bodyType == key.getBodyType());
             }
             return false;
         }
