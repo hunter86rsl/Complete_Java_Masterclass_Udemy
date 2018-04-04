@@ -1,12 +1,17 @@
 package com.timbuchalka;
 
+/**
+ * Created by dev on 16/02/2016.
+ */
 public class StockItem implements Comparable<StockItem> {
     private final String name;
     private double price;
     private int quantityStock = 0;
 
     public StockItem(String name, double price) {
-        this(name, price, 0);
+        this.name = name;
+        this.price = price;
+        this.quantityStock = 0;  // or here (but you wouldn't normally do both).
     }
 
     public StockItem(String name, double price, int quantityStock) {
@@ -28,14 +33,14 @@ public class StockItem implements Comparable<StockItem> {
     }
 
     public void setPrice(double price) {
-        if (price > 0.0) {
+        if(price > 0.0) {
             this.price = price;
         }
     }
 
     public void adjustStock(int quantity) {
         int newQuantity = this.quantityStock + quantity;
-        if (newQuantity >= 0) {
+        if(newQuantity >=0) {
             this.quantityStock = newQuantity;
         }
     }
@@ -43,11 +48,11 @@ public class StockItem implements Comparable<StockItem> {
     @Override
     public boolean equals(Object obj) {
         System.out.println("Entering StockItem.equals");
-        if (obj == this) {
+        if(obj == this) {
             return true;
         }
 
-        if ((obj == null) || (obj.getClass() != this.getClass())) {
+        if((obj == null) || (obj.getClass() != this.getClass())) {
             return false;
         }
 
@@ -63,11 +68,11 @@ public class StockItem implements Comparable<StockItem> {
     @Override
     public int compareTo(StockItem o) {
         System.out.println("Entering StockItem.compareTo");
-        if (this == o) {
+        if(this == o) {
             return 0;
         }
 
-        if (o != null) {
+        if(o != null) {
             return this.name.compareTo(o.getName());
         }
 
