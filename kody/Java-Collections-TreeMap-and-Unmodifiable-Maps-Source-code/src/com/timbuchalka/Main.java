@@ -6,7 +6,7 @@ public class Main {
     private static StockList stockList = new StockList();
 
     public static void main(String[] args) {
-        StockItem temp = new StockItem("bread", 0.86, 100);
+	    StockItem temp = new StockItem("bread", 0.86, 100);
         stockList.addStock(temp);
 
         temp = new StockItem("cake", 1.10, 7);
@@ -19,6 +19,8 @@ public class Main {
         stockList.addStock(temp);
 
         temp = new StockItem("cup", 0.50, 200);
+        stockList.addStock(temp);
+        temp = new StockItem("cup", 0.45, 7);
         stockList.addStock(temp);
 
         temp = new StockItem("door", 72.95, 4);
@@ -38,7 +40,7 @@ public class Main {
 
         System.out.println(stockList);
 
-        for (String s : stockList.Items().keySet()) {
+        for(String s: stockList.Items().keySet()) {
             System.out.println(s);
         }
 
@@ -49,7 +51,7 @@ public class Main {
         sellItem(timsBasket, "car", 1);
         System.out.println(timsBasket);
 
-        if (sellItem(timsBasket, "car", 1) != 1) {
+        if(sellItem(timsBasket, "car", 1) != 1) {
             System.out.println("There are no more cars in stock");
         }
 
@@ -68,19 +70,21 @@ public class Main {
         stockList.Items().get("car").adjustStock(2000);
         stockList.get("car").adjustStock(-1000);
         System.out.println(stockList);
-        for (Map.Entry<String, Double> price : stockList.PriceList().entrySet()) {
+        for(Map.Entry<String, Double> price: stockList.PriceList().entrySet()) {
             System.out.println(price.getKey() + " costs " + price.getValue());
         }
+
+
     }
 
     public static int sellItem(Basket basket, String item, int quantity) {
         //retrieve the item from stock list
         StockItem stockItem = stockList.get(item);
-        if (stockItem == null) {
+        if(stockItem == null) {
             System.out.println("We don't sell " + item);
             return 0;
         }
-        if (stockList.sellStock(item, quantity) != 0) {
+        if(stockList.sellStock(item, quantity) != 0) {
             basket.addToBasket(stockItem, quantity);
             return quantity;
         }
