@@ -1,16 +1,19 @@
 package com.timbuchalka;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
+/**
+ * Created by dev on 17/02/2016.
+ */
 public class Basket {
     private final String name;
     private final Map<StockItem, Integer> list;
 
     public Basket(String name) {
         this.name = name;
-        this.list = new HashMap<>();
+        this.list = new TreeMap<>();
     }
 
     public int addToBasket(StockItem item, int quantity) {
@@ -23,15 +26,15 @@ public class Basket {
     }
 
     public int removeFromBasket(StockItem item, int quantity) {
-        if ((item != null) && (quantity > 0)) {
+        if((item != null) && (quantity > 0)) {
             // check if we already have the item in the basket
             int inBasket = list.getOrDefault(item, 0);
             int newQuantity = inBasket + quantity;
 
-            if (newQuantity > 0) {
-                list.put(item, newQuantity);  //check when default = 0
+            if(newQuantity > 0) {
+                list.put(item, newQuantity);
                 return quantity;
-            } else if (newQuantity == 0) {
+            } else if(newQuantity == 0) {
                 list.remove(item);
                 return quantity;
             }
