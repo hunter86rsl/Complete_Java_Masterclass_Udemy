@@ -6,7 +6,7 @@ public class Main {
     private static StockList stockList = new StockList();
 
     public static void main(String[] args) {
-        StockItem temp = new StockItem("bread", 0.86, 100);
+	    StockItem temp = new StockItem("bread", 0.86, 100);
         stockList.addStock(temp);
 
         temp = new StockItem("cake", 1.10, 7);
@@ -40,7 +40,7 @@ public class Main {
 
         System.out.println(stockList);
 
-        for (String s : stockList.Items().keySet()) {
+        for(String s: stockList.Items().keySet()) {
             System.out.println(s);
         }
 
@@ -52,7 +52,7 @@ public class Main {
         sellItem(timsBasket, "car", 1);
         System.out.println(timsBasket);
 
-        if (sellItem(timsBasket, "car", 1) != 1) {
+        if(sellItem(timsBasket, "car", 1) != 1) {
             System.out.println("There are no more cars in stock");
         }
 
@@ -96,10 +96,10 @@ public class Main {
 //        temp = new StockItem("pen", 1.12);
 //        stockList.Items().put(temp.getName(), temp);
         StockItem car = stockList.Items().get("car");
-        if (car != null) {
+        if(car != null) {
             car.adjustStock(2000);
         }
-        if (car != null) {
+        if(car != null) {
             stockList.get("car").adjustStock(-1000);
         }
 
@@ -117,11 +117,11 @@ public class Main {
     public static int sellItem(Basket basket, String item, int quantity) {
         // retrieve the item from stock list
         StockItem stockItem = stockList.get(item);
-        if (stockItem == null) {
+        if(stockItem == null) {
             System.out.println("We don't sell " + item);
             return 0;
         }
-        if (stockList.reserveStock(item, quantity) != 0) {
+        if(stockList.reserveStock(item, quantity) != 0) {
             return basket.addToBasket(stockItem, quantity);
         }
         return 0;
@@ -130,11 +130,11 @@ public class Main {
     public static int removeItem(Basket basket, String item, int quantity) {
         // retrieve the item from stock list
         StockItem stockItem = stockList.get(item);
-        if (stockItem == null) {
+        if(stockItem == null) {
             System.out.println("We don't sell " + item);
             return 0;
         }
-        if (basket.removeFromBasket(stockItem, quantity) == quantity) {
+        if(basket.removeFromBasket(stockItem, quantity) == quantity) {
             return stockList.unreserveStock(item, quantity);
         }
         return 0;
