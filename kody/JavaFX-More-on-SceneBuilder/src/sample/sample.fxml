@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" style="-fx-text-fill: white;" stylesheets="@../styles.css" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" stylesheets="@styles.css" vgap="10" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -18,18 +18,17 @@
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
+      <RowConstraints />
    </rowConstraints>
    <children>
       <HBox spacing="5.0" GridPane.rowIndex="1">
          <children>
-            <Button mnemonicParsing="false" onAction="#handleAction" prefHeight="37.0" prefWidth="66.0" style="-fx-text-fill: white;" text="OK">
+            <Button mnemonicParsing="false" onAction="#handleAction" prefHeight="32.0" prefWidth="48.0" style="-fx-text-fill: white;" text="OK">
                <HBox.margin>
                   <Insets />
-               </HBox.margin></Button>
-            <Button mnemonicParsing="false" text="Cancel">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin></Button>
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" text="Cancel" />
             <Button mnemonicParsing="false" text="Help" />
          </children>
          <padding>

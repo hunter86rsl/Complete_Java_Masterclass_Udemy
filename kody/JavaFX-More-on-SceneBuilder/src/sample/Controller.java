@@ -9,7 +9,7 @@ public class Controller {
     private Label label;
 
     @FXML
-    public void  handleAction() {
+    public void handleAction() {
         label.setText("OK Button pressed");
     }
 }
