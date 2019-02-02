@@ -8,13 +8,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" vgap="10" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
+      <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
@@ -25,11 +26,9 @@
             <Button mnemonicParsing="false" text="OK">
                <HBox.margin>
                   <Insets />
-               </HBox.margin></Button>
-            <Button mnemonicParsing="false" text="Cancel">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin></Button>
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" text="Cancel" />
             <Button mnemonicParsing="false" text="Help" />
          </children>
          <padding>
