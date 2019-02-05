@@ -1,8 +1,6 @@
 package com.timbuchalka;
 
-import java.io.Serializable;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -16,7 +14,7 @@ public class Location {
     public Location(int locationID, String description, Map<String, Integer> exits) {
         this.locationID = locationID;
         this.description = description;
-        if (exits != null) {
+        if(exits != null) {
             this.exits = new HashMap<String, Integer>(exits);
         } else {
             this.exits = new HashMap<String, Integer>();
@@ -39,7 +37,6 @@ public class Location {
     public Map<String, Integer> getExits() {
         return new HashMap<String, Integer>(exits);
     }
-
     protected void addExit(String direction, int location) {
         exits.put(direction, location);
     }
