@@ -10,15 +10,13 @@ public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<Integer, Location>();
 
     public static void main(String[] args) throws IOException {
-
-        try (DataOutputStream locFile = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")));) {
+        try (DataOutputStream locFile = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")))) {
             for (Location location : locations.values()) {
                 locFile.writeInt(location.getLocationID());
                 locFile.writeUTF(location.getDescription());
                 System.out.println("Writing location " + location.getLocationID() + " : " + location.getDescription());
-                System.out.println("Writing " + (location.getExits().size() - 1) + "exits.");
+                System.out.println("Writing " + (location.getExits().size() - 1) + " exits.");
                 locFile.writeInt(location.getExits().size() - 1);
-
                 for (String direction : location.getExits().keySet()) {
                     if (!direction.equalsIgnoreCase("Q")) {
                         System.out.println("\t\t" + direction + "," + location.getExits().get(direction));
@@ -28,13 +26,14 @@ public class Locations implements Map<Integer, Location> {
                 }
             }
         }
+
     }
 
     static {
 
-        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader("locations_big.txt")))) {
+        try(Scanner scanner = new Scanner(new BufferedReader(new FileReader("locations_big.txt")))) {
             scanner.useDelimiter(",");
-            while (scanner.hasNextLine()) {
+            while(scanner.hasNextLine()) {
                 int loc = scanner.nextInt();
                 scanner.skip(scanner.delimiter());
                 String description = scanner.nextLine();
@@ -43,15 +42,14 @@ public class Locations implements Map<Integer, Location> {
                 locations.put(loc, new Location(loc, description, tempExit));
             }
 
-        } catch (IOException e) {
+        } catch(IOException e) {
             e.printStackTrace();
         }
 
         // Now read the exits
         try (BufferedReader dirFile = new BufferedReader(new FileReader("directions_big.txt"))) {
             String input;
-            while ((input = dirFile.readLine()) != null) {
-
+            while((input = dirFile.readLine()) != null) {
                 String[] data = input.split(",");
                 int loc = Integer.parseInt(data[0]);
                 String direction = data[1];
@@ -65,7 +63,6 @@ public class Locations implements Map<Integer, Location> {
             e.printStackTrace();
         }
     }
-
     @Override
     public int size() {
         return locations.size();
