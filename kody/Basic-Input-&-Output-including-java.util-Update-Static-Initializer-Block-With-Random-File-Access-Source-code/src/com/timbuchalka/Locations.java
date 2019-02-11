@@ -8,10 +8,11 @@ import java.util.*;
  */
 public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<Integer, Location>();
-    private static Map<Integer, IndexRecord> index = new LinkedHashMap<Integer, IndexRecord>();
+    private static Map<Integer, IndexRecord> index = new LinkedHashMap<>();
     private static RandomAccessFile ra;
 
     public static void main(String[] args) throws IOException {
+
         try (RandomAccessFile rao = new RandomAccessFile("locations_rand.dat", "rwd")) {
             rao.writeInt(locations.size());
             int indexSize = locations.size() * 3 * Integer.BYTES;
@@ -23,12 +24,12 @@ public class Locations implements Map<Integer, Location> {
             int startPointer = locationStart;
             rao.seek(startPointer);
 
-            for (Location location : locations.values()) {
+            for(Location location : locations.values()) {
                 rao.writeInt(location.getLocationID());
                 rao.writeUTF(location.getDescription());
                 StringBuilder builder = new StringBuilder();
-                for (String direction : location.getExits().keySet()) {
-                    if (!direction.equalsIgnoreCase("Q")) {
+                for(String direction : location.getExits().keySet()) {
+                    if(!direction.equalsIgnoreCase("Q")) {
                         builder.append(direction);
                         builder.append(",");
                         builder.append(location.getExits().get(direction));
@@ -51,6 +52,7 @@ public class Locations implements Map<Integer, Location> {
             }
 
         }
+
     }
 
     // 1. This first four bytes will contain the number of locations (bytes 0-3)
@@ -58,14 +60,14 @@ public class Locations implements Map<Integer, Location> {
     // 3. The next section of the file will contain the index (the index is 1692 bytes long.  It will start at byte 8 and end at byte 1699
     // 4. The final section of the file will contain the location records (the data). It will start at byte 1700
 
-    static {
 
+    static {
         try {
             ra = new RandomAccessFile("locations_rand.dat", "rwd");
-            int numLocation = ra.readInt();
-            int locationStartPoint = ra.readInt();
+            int numLocations = ra.readInt();
+            long locationStartPoint = ra.readInt();
 
-            while (ra.getFilePointer() < locationStartPoint) {
+            while(ra.getFilePointer() < locationStartPoint) {
                 int locationId = ra.readInt();
                 int locationStart = ra.readInt();
                 int locationLength = ra.readInt();
@@ -74,11 +76,11 @@ public class Locations implements Map<Integer, Location> {
                 index.put(locationId, record);
             }
 
-        }catch (IOException e) {
-            System.out.println("IOException in static initializer: " + e.getMessage() );
+        } catch(IOException e) {
+            System.out.println("IOException in static initializer: " + e.getMessage());
         }
-//
-//        try (ObjectInputStream locFile = new ObjectInputStream(new BufferedInputStream(new FileInputStream("locations.dat")))) {
+
+//        try(ObjectInputStream locFile = new ObjectInputStream(new BufferedInputStream(new FileInputStream("locations.dat")))) {
 //            boolean eof = false;
 //            while (!eof) {
 //                try {
@@ -91,11 +93,11 @@ public class Locations implements Map<Integer, Location> {
 //                    eof = true;
 //                }
 //            }
-//        } catch (InvalidClassException e) {
-//            System.out.println("InvalidClassException" + e.getMessage());
-//        } catch (IOException io) {
+//        } catch(InvalidClassException e) {
+//            System.out.println("InvalidClassException " + e.getMessage());
+//        } catch(IOException io) {
 //            System.out.println("IO Exception " + io.getMessage());
-//        } catch (ClassNotFoundException e) {
+//        } catch(ClassNotFoundException e) {
 //            System.out.println("ClassNotFoundException " + e.getMessage());
 //        }
     }
