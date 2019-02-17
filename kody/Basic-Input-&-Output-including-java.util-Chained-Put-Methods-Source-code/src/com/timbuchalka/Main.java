@@ -1,20 +1,15 @@
 package com.timbuchalka;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
-import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
+
         try (FileOutputStream binFile = new FileOutputStream("data.dat");
              FileChannel binChannel = binFile.getChannel()) {
 
@@ -68,6 +63,7 @@ public class Main {
             readBuffer.get(inputString2);
             System.out.println("inputString2 = " + new String(inputString2));
             System.out.println("int3 = " + readBuffer.getInt());
+
 
         } catch (IOException e) {
             e.printStackTrace();
